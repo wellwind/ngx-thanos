@@ -1,25 +1,35 @@
-# ThanosSnap
+# thanos-snap
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
+Use [Thanos](https://www.google.com/search?q=Thanos) snap to destory your DOM elements.
 
-## Code scaffolding
+# Installation
 
-Run `ng generate component component-name --project thanos-snap` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project thanos-snap`.
+```shell
+npm install @wellwind/thanos-snap
 
-> Note: Don't forget to add `--project thanos-snap` or else it will be added to the default project in your `angular.json` file.
+or
 
-## Build
+yarn add @wellwind/thanos-snap
+```
 
-Run `ng build thanos-snap` to build the project. The build artifacts will be stored in the `dist/` directory.
+Then import the scripts.
 
-## Publishing
+```typescript
+import { thanosSnap, thanosRewind } from '@wellwind/thanos-snap';
+```
 
-After building your library with `ng build thanos-snap`, go to the dist folder `cd dist/thanos-snap` and run `npm publish`.
+# Usage
 
-## Running unit tests
+```typescript
+// destroy the element, and rewind it after 3s.
+const element = document.querySelector('someElm');
+thanosSnap(element).then(() => {
+  setTimeout(() => {
+    thanosRewind(element);
+  }, 3000);
+});
+```
 
-Run `ng test thanos-snap` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Are you using Angular
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+There is also an Angular library called [@wellwind/ngx-thanos](../ngx-thanos). You can simple add a directive to your element, and enjoy the Thanos snap effect.
