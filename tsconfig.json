@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@wellwind/thanos-snap": ["libs/thanos-snap/src/index.ts"],
+      "@wellwind/ngx-thanos": ["libs/ngx-thanos/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

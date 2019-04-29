@@ -1,0 +1,13 @@
+<div [ngxThanosSnap]="snap" (snapStarting)="starting()" (snapEnded)="ended()" (rewinded)="rewinded()">
+  <h1>Thanos</h1>
+  <div>
+    Thanos is a fictional supervillain appearing in American comic books
+    published by Marvel Comics. The character, created by writer/artist Jim
+    Starlin, first appeared in The Invincible Iron Man #55 (cover dated February
+    1973). Thanos is one of the most powerful villains in the Marvel Universe
+    and has clashed with many heroes including the Avengers, the Guardians of
+    the Galaxy, the Fantastic Four, and the X-Men.
+  </div>
+</div>
+
+<button (click)="snap = !snap">Snap</button>

@@ -2,7 +2,198 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "thanos-snap": {
+      "root": "libs/thanos-snap",
+      "sourceRoot": "libs/thanos-snap/src",
+      "projectType": "library",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/thanos-snap/tsconfig.lib.json",
+            "project": "libs/thanos-snap/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/thanos-snap/tsconfig.lib.json",
+              "libs/thanos-snap/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/thanos-snap/jest.config.js",
+            "tsConfig": "libs/thanos-snap/tsconfig.spec.json"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "dmeo": {
+      "root": "apps/dmeo/",
+      "sourceRoot": "apps/dmeo/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dmeo",
+            "index": "apps/dmeo/src/index.html",
+            "main": "apps/dmeo/src/main.ts",
+            "polyfills": "apps/dmeo/src/polyfills.ts",
+            "tsConfig": "apps/dmeo/tsconfig.app.json",
+            "assets": ["apps/dmeo/src/favicon.ico", "apps/dmeo/src/assets"],
+            "styles": ["apps/dmeo/src/styles.scss"],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dmeo/src/environments/environment.ts",
+                  "with": "apps/dmeo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dmeo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dmeo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dmeo:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dmeo/tsconfig.app.json",
+              "apps/dmeo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "apps/dmeo/jest.config.js",
+            "tsConfig": "apps/dmeo/tsconfig.spec.json",
+            "setupFile": "apps/dmeo/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dmeo-e2e": {
+      "root": "apps/dmeo-e2e",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/builders:cypress",
+          "options": {
+            "cypressConfig": "apps/dmeo-e2e/cypress.json",
+            "tsConfig": "apps/dmeo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dmeo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dmeo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/dmeo-e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "ngx-thanos": {
+      "root": "libs/ngx-thanos",
+      "sourceRoot": "libs/ngx-thanos/src",
+      "projectType": "library",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ngx-thanos/tsconfig.lib.json",
+            "project": "libs/ngx-thanos/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ngx-thanos/tsconfig.lib.json",
+              "libs/ngx-thanos/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/builders:jest",
+          "options": {
+            "jestConfig": "libs/ngx-thanos/jest.config.js",
+            "tsConfig": "libs/ngx-thanos/tsconfig.spec.json",
+            "setupFile": "libs/ngx-thanos/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
@@ -17,5 +208,6 @@
     "@nrwl/schematics:library": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "thanos-snap"
 }
