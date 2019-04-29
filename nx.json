@@ -19,6 +19,12 @@
     },
     "ngx-thanos": {
       "tags": []
+    },
+    "demo": {
+      "tags": []
+    },
+    "demo-e2e": {
+      "tags": []
     }
   }
 }

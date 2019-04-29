@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'dmeo',
+  name: 'demo',
   preset: '../../jest.config.js',
-  coverageDirectory: '../../coverage/apps/dmeo/',
+  coverageDirectory: '../../coverage/apps/demo/',
   snapshotSerializers: [
     'jest-preset-angular/AngularSnapshotSerializer.js',
     'jest-preset-angular/HTMLCommentSerializer.js'
