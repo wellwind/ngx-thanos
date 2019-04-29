@@ -75,4 +75,4 @@ export class AppComponent implements OnInit {
 
 # Use pure javascript
 
-There is also a pure javascript library called [@wellwind/thanos-snap](../thanos-snap). Then you don't have to rely on Angular.
+There is also a pure javascript library called [@wellwind/thanos-snap](https://github.com/wellwind/ngx-thanos/tree/master/libs/thanos-snap). Then you don't have to rely on Angular.

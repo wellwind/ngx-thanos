@@ -32,4 +32,4 @@ thanosSnap(element).then(() => {
 
 # Are you using Angular
 
-There is also an Angular library called [@wellwind/ngx-thanos](../ngx-thanos). You can simple add a directive to your element, and enjoy the Thanos snap effect.
+There is also an Angular library called [@wellwind/ngx-thanos](https://github.com/wellwind/ngx-thanos/tree/master/libs/ngx-thanos). You can simple add a directive to your element, and enjoy the Thanos snap effect.
