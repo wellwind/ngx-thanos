@@ -7,12 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   snap = false;
+  canRewind = false;
 
   starting() {
+    this.canRewind = false;
     console.log('starting');
   }
 
   ended() {
+    this.canRewind = true;
     console.log('ended');
   }
 

@@ -1,4 +1,4 @@
-<div [ngxThanosSnap]="snap" (snapStarting)="starting()" (snapEnded)="ended()" (rewinded)="rewinded()">
+<div [ngxThanosSnap]="snap" #thanos="ngxThanosSnap" (snapStarting)="starting()" (snapEnded)="ended()" (rewinded)="rewinded()">
   <h1>Thanos</h1>
   <div>
     Thanos is a fictional supervillain appearing in American comic books
@@ -10,4 +10,5 @@
   </div>
 </div>
 
-<button (click)="snap = !snap">Snap</button>
+<button (click)="snap = !snap" [disabled]="canRewind">Snap</button>
+<button (click)="thanos.rewind()" [disabled]="!canRewind">Rewind</button>
