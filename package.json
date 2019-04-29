@@ -7,6 +7,8 @@
     "start": "ng serve",
     "build": "ng build",
     "build:lib:all": "ng run thanos-snap:build && ng run ngx-thanos:build",
+    "publish:js": "npm publish ./libs/thanos-snap --access=public",
+    "publish:ng": "npm publish ./libs/ngx-thanos --access=public",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
