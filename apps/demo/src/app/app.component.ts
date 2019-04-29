@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ThanosSnapService } from '../../../../libs/ngx-thanos/src/lib/thanos-snap.service';
+import { ThanosSnapService } from '@wellwind/ngx-thanos';
 
 @Component({
   selector: 'wellwind-root',
