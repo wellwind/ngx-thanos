@@ -5,11 +5,11 @@ Use [Thanos](https://www.google.com/search?q=Thanos) snap to destory your DOM el
 # Installation
 
 ```shell
-npm install @wellwind/thanos-snap
+npm install html2canvas ramda @wellwind/thanos-snap
 
 or
 
-yarn add @wellwind/thanos-snap
+yarn add html2canvas ramda @wellwind/thanos-snap
 ```
 
 Then import the scripts.

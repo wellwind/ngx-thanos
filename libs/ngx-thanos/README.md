@@ -5,11 +5,11 @@ Use [Thanos](https://www.google.com/search?q=Thanos) snap to destory your DOM el
 # Installation
 
 ```shell
-npm install @wellwind/ngx-thanos
+npm install html2canvas ramda @wellwind/thanos-snap @wellwind/ngx-thanos
 
 or
 
-yarn add @wellwind/ngx-thanos
+yarn add html2canvas ramda @wellwind/thanos-snap @wellwind/ngx-thanos
 ```
 
 # Usage
@@ -21,7 +21,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxThanosModule } from '@wellwind/ngx-thanos';
 import { AppComponent } from './app.component';
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +34,13 @@ export class AppModule {}
 Add `ngxThanosSnap` directive to template
 
 ```html
-<div [ngxThanosSnap]="snap" #thanos="ngxThanosSnap" (snapStarting)="starting()" (snapEnded)="ended()" (rewinded)="rewinded()">
+<div
+  [ngxThanosSnap]="snap"
+  #thanos="ngxThanosSnap"
+  (snapStarting)="starting()"
+  (snapEnded)="ended()"
+  (rewinded)="rewinded()"
+>
   <h1>Thanos</h1>
   <div>
     Thanos is a fictional supervillain appearing in American comic books

@@ -1,11 +1,15 @@
 {
   "name": "@wellwind/ngx-thanos",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
-    "@angular/core": "^7.2.0"
+    "@angular/core": "^7.2.0",
+    "@wellwind/thanos-snap": "^0.0.5"
   },
-  "author": { "name": "Mike Huang", "email": "wellwind@gmail.com"},
+  "author": {
+    "name": "Mike Huang",
+    "email": "wellwind@gmail.com"
+  },
   "keywords": ["thanos", "angular", "directive", "service", "javascript"],
   "homepage": "https://github.com/wellwind/ngx-thanos/tree/master/libs/ngx-thanos",
   "license": "MIT",

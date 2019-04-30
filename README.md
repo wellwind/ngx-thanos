@@ -1,5 +1,7 @@
 # Thanos!
 
+[Demo](https://stackblitz.com/edit/ngx-thanos-demo)
+
 Use [Thanos](https://www.google.com/search?q=Thanos) snap to destory your DOM elements.
 
 - [JavaScript Library](./libs/thanos-snap)

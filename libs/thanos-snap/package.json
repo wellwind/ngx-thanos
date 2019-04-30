@@ -1,8 +1,14 @@
 {
   "name": "@wellwind/thanos-snap",
-  "version": "0.0.3",
-  "peerDependencies": {},
-  "author": { "name": "Mike Huang", "email": "wellwind@gmail.com"},
+  "version": "0.0.5",
+  "peerDependencies": {
+    "html2canvas": "^1.0.0-rc.1",
+    "ramda": "^0.26.1"
+  },
+  "author": {
+    "name": "Mike Huang",
+    "email": "wellwind@gmail.com"
+  },
   "keywords": ["thanos", "javascript"],
   "homepage": "https://github.com/wellwind/ngx-thanos/tree/master/libs/thanos-snap",
   "license": "MIT",
